@@ -1,5 +1,5 @@
 note
-	description : "project application root class"
+	description : "projectRay application root class"
 	date        : "$Date$"
 	revision    : "$Revision$"
 
@@ -18,7 +18,7 @@ feature {NONE} -- Initialization
 			-- Run application.
 		do
 			--| Add your code here
-			print ("Hello Eiffel World Kati!%N")
+			print ("Hello Eiffel World!%N")
 		end
 
 end
