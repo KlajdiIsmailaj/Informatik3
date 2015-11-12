@@ -18,7 +18,7 @@ feature {NONE} -- Initialization
 			-- Run application.
 		do
 			--| Add your code here
-			print ("Hello Eiffel World hahahahahahahhahahaha!%N")
+			print ("Hello Eiffel World hahahahahahahhahahaha im ray!%N")
 		end
 
 end
