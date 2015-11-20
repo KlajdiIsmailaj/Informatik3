@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-13-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-13-0 http://www.eiffel.com/developers/xml/configuration-1-13-0.xsd" name="SOLVE_PROBLEM" uuid="F841EF88-05A1-4A34-975F-05EDD92DC75D">
-	<target name="SOLVE_PROBLEM">
-		<root feature="make" class="APPLICATION"/>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-13-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-13-0 http://www.eiffel.com/developers/xml/configuration-1-13-0.xsd" name="fakul2" uuid="7C28B6F1-E3FF-470C-BD6F-56331F50CC27">
+	<target name="fakul2">
+		<root feature="make" class="APPLICATION2"/>
 		<option warning="true">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
 		<precompile name="base_pre" location="$ISE_PRECOMP/base-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY/library/base/base-safe.ecf"/>
-		<cluster name="solve_problem" location=".\" recursive="true">
+		<cluster name="fakul2" location=".\" recursive="true">
 			<file_rule>
 				<exclude>/EIFGENs$</exclude>
 				<exclude>/.svn$</exclude>

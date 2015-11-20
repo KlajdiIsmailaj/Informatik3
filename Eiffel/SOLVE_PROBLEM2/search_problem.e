@@ -24,6 +24,7 @@ create
 
 
 feature{NONE}
+     -- when creating this object it recieves the input form the console and the param will be used in the various routines below
 
 
 
@@ -206,8 +207,9 @@ feature{NONE}
 
 
 
-           is_solvable
 
+           is_solvable
+                   deferred
                   do
 
 

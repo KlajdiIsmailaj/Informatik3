@@ -5,7 +5,7 @@ note
 	revision: "$Revision$"
 
 class
-   	BINARY_TREE2[G->{COMPARABLE,NUMERIC}]
+   	BINARY_TREE3[G->{COMPARABLE,NUMERIC}]
 
 
 

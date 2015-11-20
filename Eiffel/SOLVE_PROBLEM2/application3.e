@@ -4,7 +4,7 @@ note
 	revision    : "$Revision$"
 
 class
-	APPLICATION
+	APPLICATION3
 
 inherit
 	ARGUMENTS
@@ -34,7 +34,7 @@ feature {NONE} -- Initialization
      do
      	 create T2.constructTree
      	 create search.invalid_create
-     	 
+
        T2.insert (34)
        T2.insert (4)
        T2.insert (343)

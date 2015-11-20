@@ -4,7 +4,7 @@ note
 	revision    : "$Revision$"
 
 class
-	APPLICATION
+	APPLICATION2
 
 inherit
 	ARGUMENTS

@@ -5,7 +5,7 @@ note
 	revision: "$Revision$"
 
 --class NODE[G->{COMPARABLE,NUMERIC}]
-class NODE[G->{COMPARABLE,NUMERIC}]
+class NODE3[G->{COMPARABLE,NUMERIC}]
 
 create make
 feature--initialization
