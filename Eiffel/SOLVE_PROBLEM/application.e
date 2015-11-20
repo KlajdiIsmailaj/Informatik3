@@ -34,6 +34,7 @@ feature {NONE} -- Initialization
      do
      	 create T2.constructTree
      	 create search.invalid_create
+     	 
        T2.insert (34)
        T2.insert (4)
        T2.insert (343)
@@ -46,6 +47,7 @@ feature {NONE} -- Initialization
 
        --search.set_tree (T2)
        print("%N")
+
        print(search.get_solution.get_value)
 
      	print("Please enter an integer afterwards press the enter-button !")

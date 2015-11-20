@@ -53,6 +53,7 @@ feature {SEARCH_PROBLEM, NONE} ---- Setter ----
 					--	set_valid
 
 					if set_valid then
+
 						exist:=TRUE
 						else
 						exist:=FALSE

@@ -34,8 +34,8 @@ feature{NONE}
                    	int5:INTEGER
 
                  do
-                 
-                 	is_solvable(int5)                 	   Result:=directly_solvable
+
+                 	is_solvable                 	   Result:=directly_solvable
                  ensure
                       not Result or has_valid_solution
 
@@ -43,7 +43,7 @@ feature{NONE}
 
 
 
-           solve(int5:G)
+           solve
 
                          -- here the problem is solvable so it get solved....
                     require
@@ -55,7 +55,7 @@ feature{NONE}
                     end
 
 
-          part(int4:G)
+          part
 
                     require
                     	  values_set_properly
@@ -65,7 +65,8 @@ feature{NONE}
 
 
 
-              is_solvable(int3:INTEGER)
+              --is_solvable(int3:INTEGER)
+               is_solvable
                                   --  check if the problem could be solved..
 
                     require

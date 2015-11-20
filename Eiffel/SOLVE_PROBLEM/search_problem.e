@@ -19,22 +19,28 @@ inherit
 
 create
 
-	   invalid_create
+	  invalid_create
+
 
 
 feature{NONE}
 
 
-      -- construct_invalid
-       invalid_create
+
+
+       invalid_create(number:G)
+
+
 
                               -- create an invalid solution object...
 
        do
 
        	      valid_solution:=FALSE
-       	     -- create this_solution.construct_invalid
+
        	     create this_solution.invalid_create
+
+
 
        end
 
@@ -66,7 +72,41 @@ feature{ANY}----getter-----------------------
 --feature{ANY}-----setter-----------------
 
 
-            -- set_tree(Tree:detachable BINARY_TREE2[G], numb:INTEGER)
+
+	 set_tree(T:detachable BINARY_TREE2)
+            local
+            	 var_value:detachable G
+
+            do
+            	    -- T:= Tree.double
+            	     T:=Tree
+            	     check attached T as my_tree then
+            	        T:=my_tree
+            	        d_node:= my_tree.get_root
+            	     	end
+
+
+            	       -- this_solution.set(var_value
+            	       if my_tree.get_root.get_value= current.number then
+
+
+            	       if solve_directly(current.number) then
+
+            	       	this_solution.is_exist
+
+
+            	       end
+            	        end
+            	                                        --- this set routine is in search_SOLUTION CLASS
+
+            	        if values_set_properly then
+            	               solve(current.number)
+
+            	        end
+            	        ensure
+            	        	values_set_properly or not has_valid_solution
+            	         end
+
 
 
 feature{ANY}
@@ -100,14 +140,15 @@ feature{ANY}
 
 
 feature{NONE}
-                     solve(number3:INTEGER)  ----here solve routine will be overwritten from the divisible_problem class inherited
+                     --solve(number3:INTEGER)
+                     solve  ----here solve routine will be overwritten from the divisible_problem class inherited
                do
                           from
 
                           until
                           	  is_directly_solvable
                           loop
-                          	    part(number3)
+                          	    part
                           end
                                 solve_directly
 
@@ -115,28 +156,16 @@ feature{NONE}
 
 
 
-                         part(int:INTEGER)---------------------------------------------new------------------------
+                         part---------------------------------------------new------------------------
 
-
-
-                      --   do
-                               --  check attached d_node as your_node then
-
-                               --  if your_node.get_right_child /=Void then
-                                  --  d_node:=your_node.get_right_child
-
-                                -- end
-                                 --	end
-                         -- end
-                         ---------------------------------------------------------------------------
                            do
                            	  check attached d_node as your_node then
 
 
-                           	       if your_node.get_value> int  and your_node.get_right_child/=Void then
+                           	       if your_node.get_value> current.number and your_node.get_right_child/=Void then
                            	       	d_node:= your_node.get_right_child
 
-                           	       	elseif your_node.get_value<int  and your_node.get_left_child/=Void then
+                           	       	elseif your_node.get_value<current.number  and your_node.get_left_child/=Void then
                            	       		d_node:= your_node.get_left_child
 
 
@@ -146,7 +175,7 @@ feature{NONE}
 
 
 ---------------------------------------------------------------------------------------------------
-              solve_directly(int2:INTEGER):BOOLEAN
+              solve_directly:BOOLEAN
 
 
 
@@ -159,7 +188,7 @@ feature{NONE}
 
                	check attached d_node as e_node then
                	--	value:=e_node.get_value
-               		 if e_node.get_value = int2 then
+               		 if e_node.get_value = current.number then
 
                	  		exist:= TRUE
                	 			 else
@@ -176,8 +205,8 @@ feature{NONE}
 
 
 
-          
-           is_solvable(inpu:INTEGER)
+
+           is_solvable
 
                   do
 
@@ -185,11 +214,11 @@ feature{NONE}
                    	check attached d_node as e_node then
                      if attached number as console_inpu then
 
-                     	if e_node.get_value > inpu and e_node.get_right_child then
+                     	if e_node.get_value > current.number and e_node.get_right_child then
 
                      		 directly_solvable:=TRUE
 
-                     		 elseif e_node.get_value < inpu  and e_node.get_left_child then
+                     		 elseif e_node.get_value <current.number  and e_node.get_left_child then
 
                      		  directly_solvable:=TRUE
                      		 else
@@ -199,7 +228,7 @@ feature{NONE}
 
                      end
 
-                       --referred
+
 
                    end
 
