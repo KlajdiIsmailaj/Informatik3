@@ -1,14 +1,16 @@
 #include <iostream>
-#include <random>
-#include <ctime>
-#include <thread>
-#include <atomic>
-#include "Buffer.h"
-#include "Producer.h"
+//#include "Buffer.h"
+//#include "Producer.h"
+//#include "Consumer.h"
 
 using namespace std;
 
 int main() {
+	/**
+	Buffer <int > b;
+	thread p1(Producer);
+	thread c1(Consumer);
+	**/
 	
 	cout << "hghg" << endl;
 	
