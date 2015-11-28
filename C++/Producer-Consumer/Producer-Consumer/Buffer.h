@@ -10,19 +10,15 @@ template<class G>
 class Buffer{
 
 private:
-	G*values;
+	G *values;
 	int top;
 	mutex lock;
 	condition_variable not_full;
 	condition_variable not_empty;
-
-
+	int number = 10;
 
 public:
 	int capacity;
-	int number=10;
-
-	
 
 public:
 	Buffer();
