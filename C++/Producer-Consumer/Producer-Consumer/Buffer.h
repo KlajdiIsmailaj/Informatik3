@@ -108,12 +108,12 @@ public:
 				if (theMutex.try_lock()) {
 
 					val = values[top--];
-					//top -= 1;
+				
 					actualsize = -1;
 
 					theMutex.unlock();
 					break;
-					
+					//this_thread::sleep_for(5*interval);
 					
 				}
 				else {
@@ -151,10 +151,10 @@ public:
 	// checks if the buffer is full
 	bool isFull()
 	{
-		cout <<"CAPACITY "<< capacity << endl;
+		cout <<"CAPACITY"<< capacity << endl;
 		if ((top + 1) == capacity) {
-		//if ((top  == capacity-1) {
-		//if (capacity==actualsize) {
+		
+		
 			cout << "THE isFull FUNCTION IS true\n:" << endl;
 			return true;
 			

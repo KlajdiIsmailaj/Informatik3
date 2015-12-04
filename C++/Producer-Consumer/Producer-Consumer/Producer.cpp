@@ -8,15 +8,15 @@
 // required function to produce elements (integer) into the buffer 
 void Producer::produce()
 {
+
 	//if (!pBuffer->isFull())
 	
 	//{
 	//	cout << "Producer can not produce .because Buffer is full! --******------->:\n"  << endl;
 
-		this_thread::sleep_for(chrono::milliseconds(200));
-
+		//this_thread::sleep_for(chrono::milliseconds(200));
 	
-		// this blog generate the random element (integer)
+	
 		std::uniform_int_distribution<int> range(1, 100);
 		std::random_device read;
 		std::mt19937 mt(read());
@@ -27,14 +27,14 @@ void Producer::produce()
 		
 
 
-		this_thread::sleep_for(chrono::milliseconds(100));
+		this_thread::sleep_for(chrono::milliseconds(200));
 
-	     notify_all_at_thread_exit;
+	    // notify_all_at_thread_exit;
 
 		//return randomInteger;
 	
 	
-			
+		//theMutex.unlock();
 
 	//}
 	//else {

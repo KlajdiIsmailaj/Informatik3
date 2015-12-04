@@ -3,6 +3,7 @@
 
 
 // required function to remove elements (integer) from the buffer and print on the console
+
 void Consumer::consume(){
 	
 	
