@@ -42,7 +42,7 @@ public:
 		capacity = mycapacity;
 		values = new G[mycapacity];
 		actualsize = 0;    // number of elements (integers) in the buffer
-		std::lock_guard<std::mutex> guard(theMutex);
+		//std::lock_guard<std::mutex> guard(theMutex);
 	}
 	// distructor of the buffer
 	~Buffer() {
@@ -54,8 +54,8 @@ public:
 	void push(G element)
 	{
 		
-		//if (!Buffer<G>::isFull() )
-		//{
+		if (!Buffer<G>::isFull() )
+		{
 			this_thread::sleep_for(interval);
 
 			while (true) {
@@ -80,10 +80,10 @@ public:
 
 			}
 
-		//}
-		//else {
-		//	cout << "thread can not produce because buffer is full!" << endl;
-		//}
+		}
+		else {
+			cout << "thread can not produce because buffer is full!" << endl;
+		}
 
 		
 
@@ -151,8 +151,10 @@ public:
 	// checks if the buffer is full
 	bool isFull()
 	{
+		cout <<"CAPACITY "<< capacity << endl;
 		if ((top + 1) == capacity) {
 		//if ((top  == capacity-1) {
+		//if (capacity==actualsize) {
 			cout << "THE isFull FUNCTION IS true\n:" << endl;
 			return true;
 			

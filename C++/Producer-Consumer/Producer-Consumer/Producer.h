@@ -22,7 +22,7 @@ public:
 
 // function and buffer variable declaration	
 public:
-	int produce();
+	void produce();
 	
 
 	Buffer<int> *pBuffer;

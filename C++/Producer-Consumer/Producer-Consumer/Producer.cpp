@@ -6,7 +6,7 @@
 
 
 // required function to produce elements (integer) into the buffer 
-int Producer::produce()
+void Producer::produce()
 {
 	//if (!pBuffer->isFull())
 	
@@ -31,7 +31,7 @@ int Producer::produce()
 
 	     notify_all_at_thread_exit;
 
-		return randomInteger;
+		//return randomInteger;
 	
 	
 			

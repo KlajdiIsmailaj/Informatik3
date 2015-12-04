@@ -26,7 +26,7 @@ private:
 
 public:
 
-	int consume();
+	void consume();
 
 };
 

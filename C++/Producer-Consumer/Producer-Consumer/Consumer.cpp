@@ -3,7 +3,7 @@
 
 
 // required function to remove elements (integer) from the buffer and print on the console
-int Consumer::consume(){
+void Consumer::consume(){
 	
 	
 
@@ -24,7 +24,7 @@ int Consumer::consume(){
 	
 		//notify_all_at_thread_exit;
 	//theMutex.unlock();
-	return 0;
+//	return 0;
 }
 
 

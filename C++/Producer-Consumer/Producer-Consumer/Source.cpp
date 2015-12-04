@@ -10,13 +10,21 @@
 using namespace std;
 
 
-int buff;
-Buffer <int> b(buff);
-//Buffer <int> b(20);
-
 
  
-// initialization of the object classes producer and consumer
+	int buff;
+	
+
+	int buffer() {
+		cout << "Enter Buffer Size: ";
+		cin >> buff;
+		return buff;
+	}
+
+	Buffer <int> b(buffer());
+
+ 
+ //initialization of the object classes producer and consumer
 void Produce(void)
 {
 	
@@ -34,37 +42,28 @@ void Consume(void)
 
 // main function to start the program
 int main() {
+	//int buff;
+	int countThread = 0;
+	int countThread2 = 0;
 
-	 int  bufferSIZE = 0;
-	 buff = bufferSIZE;
-	 /*int a=1;
-	 int c=1;*/
+	/*cout << "Enter Buffer Size: ";
+	cin >> buff;*/
+	//buffer();
+	cout << "Enter Producer Threads Size: ";
+	cin >> countThread;
+	cout << "Enter Consumer Threads Size: ";
+	cin >> countThread2;
 
-		  int countThread  = 0;
-		  int countThread2 = 0;
-
-
-		
-		
-		//a = (int*)(&anzahlThread);
-		//c = (int*)(&anzahlThread2);
-
-		cout << "Enter Buffer Size: ";
-		cin >> bufferSIZE;
-		cout << "Enter Producer Threads Size: ";
-		cin >> countThread;
-		cout << "Enter Consumer Threads Size: ";
-		cin >> countThread2;
-	 
-
-
+	/*Buffer <int> b(buff);
+	Producer p(&b);
+	Consumer  c(&b);*/
 	
-	/*std::thread producerThreads[anzahlThread];
-	std::thread consumerThreads[anzahlThread2];*/
+		 
+	
 
-		//declare the threads objects
-		std::thread producerThreads;
-	std::thread consumerThreads;
+	//declare the threads objects
+	thread producerThreads;
+	thread consumerThreads;
 
 	// create thread 1 ( producer) with the entered number in the console (countThread)
 	for (int i = 0; i < countThread; i++)
@@ -88,13 +87,14 @@ int main() {
 
 	
 	// verrify number of elements in the buffer
-	 cout << "number of element in buffer ---->" << b.actualsize << endl;
+	// cout << "number of element in buffer ---->" << b.actualsize << endl;
 
 	 
 
 	system("pause");
 	return 0;
 }
+
 
 
 
