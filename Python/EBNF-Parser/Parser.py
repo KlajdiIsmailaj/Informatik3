@@ -18,17 +18,17 @@ class Parser:
         if self._proveValidity(string) is False:
             print("The expression '" + self._s + "' is: " +str(self._proveValidity(string)))
         else:        
-            print("The expression '" + self._s + "' is: " + str(self._parseExpression()))
+            print("The expression '" + self._s + "' is: " + str(self._expression()))
         
     '''
     Returns if the whole expression is true or false
     @return: res
     '''
-    def _parseExpression(self):
+    def _expression(self):
         if self._s.count("+") == 0 | self._s.count("-") == 0:
-            res = self._parseTerm()
+            res = self._term()
         elif self._s.count("+") > 0 or self._s.count("-") > 0:
-            res = self._parseTerm()
+            res = self._term()
             while len(self._s) > 0 and self._s[0] == "+" or len(self._s) > 0 and self._s[0] == "-":
                 self._s = self._s[1:]
         return res
@@ -37,11 +37,11 @@ class Parser:
     Returns if there is a valid term with true or false
     @return: res 
     '''
-    def _parseTerm(self):
+    def _term(self):
         if self._s.count("*") == 0 | self._s.count("/") == 0:
-            res = self._parseFactor()
+            res = self._factor()
         elif self._s.count("*") > 0 or self._s.count("/") > 0:
-            res = self._parseFactor()
+            res = self._factor()
             while len(self._s) > 0 and self._s[0] == "*"  or len(self._s) > 0 and self._s[0] == "/":
                 self._s = self._s[1:]
         return res
@@ -51,15 +51,15 @@ class Parser:
     also it checks if the amount and order of brackets is true or false.
     @return: res
     '''
-    def _parseFactor(self):
+    def _factor(self):
         if self._s[0] != "(":
             if self._s[0] is "0" or self._s[0] is "1" or self._s[0] is "2" or self._s[0] is "3" or self._s[0] is "4" or self._s[0] is "5" or self._s[0] is "6" or self._s[0] is "7" or self._s[0] is "8" or self._s[0] is "9":
-                res = self._parseConstant()
+                res = self._constant()
             elif self._s[0] is "x" or self._s[0] is "y" or self._s[0] is "z":
-                res = self._parseVariable() 
+                res = self._variable() 
         elif self._s[0] == "(":
             self._s = self._s[1:]
-            res = self._parseExpression()
+            res = self._expression()
             if self._s[0] == ")":
                 self._s = self._s[1:]
         return res
@@ -68,7 +68,7 @@ class Parser:
     this method proves if there is a valid variable 
     @return: res
     '''
-    def _parseVariable(self):
+    def _variable(self):
         res=False
         if self._s[0] is "x" or self._s[0] is "y" or self._s[0] is "z":
             res= True
@@ -79,7 +79,7 @@ class Parser:
     this method proves if an digit exists
     @return: res
     '''
-    def _parseConstant(self):
+    def _constant(self):
         res = False
         if self._isDigit():
             while len(self._s) > 0 and self._isDigit():
@@ -98,7 +98,7 @@ class Parser:
     verifies the right order of brackets and returns with true or false
     @return: integer
     '''
-    def _rightOrderOfBrackets(self):
+    def _bracketsOrder(self):
         brackets = 0
         for char in self._s:
             if brackets >= 0:
@@ -158,6 +158,28 @@ class Parser:
         return self._isElementAllowed(self._s[len(self._s) - 1])
     
     '''
+    checks if a digit or a variable is before an operator like + , - , * and / 
+    @return: res
+    '''
+    def _isCharOperator(self):
+        res = False
+        for i in range(len(self._s) - 1):
+            if i > 0 and ((str(self._s[i]) == "+" or str(self._s[i]) == "-" or str(self._s[i]) == "*" or str(self._s[i]) == "/") and (not (str(self._s[i + 1]) == "(" or self._isElementAllowed(self._s[i + 1]) ) or not (str(self._s[i - 1]) == ")" or self._isElementAllowed(self._s[i - 1]) ))):
+                res = True
+        return res
+    
+    '''
+    checks if a operator or a digit or a variable is before an bracket or after it ( )
+    @return: res
+    '''
+    def _isCharBracket(self):
+        res = False
+        for i in range(len(self._s) - 1):
+            if i > 0 and ((str(self._s[i]) == "(" and self._isElementAllowed(self._s[i - 1]) ) or (str(self._s[i]) == ")" and self._isElementAllowed(self._s[i + 1]))):
+                res = True
+        return res
+    
+    '''
     catches all exceptions
     @return: res
     '''
@@ -167,7 +189,7 @@ class Parser:
         self._s = string
         if len(self._s) == 0:
             res = False
-        elif self._s.count("(") > 0 and not self._rightOrderOfBrackets():
+        elif self._s.count("(") > 0 and not self._bracketsOrder():
             res = False        
         elif not (self._s.count("(") == self._s.count(")")):
             res = False
@@ -178,6 +200,10 @@ class Parser:
         elif not self._elementAtEnd() and not str(self._s[len(self._s)-1]) == ")":
             res = False
         elif self._invalidElement():
+            res = False
+        elif self._isCharOperator():
+            res = False
+        elif self._isCharBracket():
             res = False
         return res
     

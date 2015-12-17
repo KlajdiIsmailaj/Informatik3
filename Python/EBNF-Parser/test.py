@@ -10,7 +10,7 @@ from sys import argv
 '''
 def execute():
     p = Parser()
-    p.parse("1+d+1")
+    p.parse("2++2")
     
     
   
