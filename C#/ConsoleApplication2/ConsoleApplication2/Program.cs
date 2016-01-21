@@ -25,7 +25,7 @@ namespace ConsoleApplication2
             // This loop fills the list randomFloatList with random floats in the range 100 to -100 
             for (int i = 0; i < 10; i++)
             {
-                randomFloatList.add(randomGenerator.randomFloat(-100, 5));
+                randomFloatList.add(randomGenerator.randomFloat(-100, 100));
             }
             foreach (float zahl in randomFloatList)
             {
@@ -106,7 +106,7 @@ namespace ConsoleApplication2
             // This loop fills the list fl1 with random floats in the range 100 to -100 
             for (int i = 0; i < 10; i++)
             {
-                randomStringList.add(randomGenerator.randomString(3, 100));
+                randomStringList.add(randomGenerator.randomString(1, 10));
             }
 
             //with print the vlues of the list in other to discovert the values contain..
