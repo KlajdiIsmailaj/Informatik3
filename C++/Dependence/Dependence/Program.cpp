@@ -1,3 +1,7 @@
+/**
+@author Gruppe 6
+@version 1.0 3/12/15
+*/
 #include <iostream>
 #include <string>
 #include <fstream>
