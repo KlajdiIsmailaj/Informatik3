@@ -8,24 +8,25 @@ namespace Exercise2
 {
     class MathsFunctions
     {
-        int A;
         float B;
 
+        //calculates the max value from lamda expression array
         public void max(Func<float, float>[] l, float x)
-        //  public void max(Func<int, int>[] l, int x)
         {
+            float max = 0;
             for (int i = 0; i < l.Length; i++)
             {
-                float max = 0;
-
                 B = l[i](x);
+
                 if (B > max)
                 {
                     max = B;
                 }
             }
-            Console.WriteLine(B);
+            Console.WriteLine("the max is --> "+max);
         }
+
+        //calculates the sum with 1 lamda expression from lo to hi
         public void sum(Func<int, int> l, int lo, int hi)
         {
             int result = 0;
@@ -34,7 +35,7 @@ namespace Exercise2
                 Console.WriteLine("add this to result -->" + l(i));
                 result += l(i);
             }
-            Console.WriteLine("the sum is -->" + result);
+            Console.WriteLine("the sum is --> " + result);
         }
 
 
