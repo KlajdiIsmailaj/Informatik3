@@ -11,9 +11,9 @@ namespace Exercise2
     {
         float currentValue;
 
-        //calculates the max value from lamda expression array
+        //calculates the f(x) value from each lamda expression int array
         //@param x a value for the func
-        //@param maxValue the greatest calculated value
+        //@param maxValue the greatest calculated f(x) value
         //@param currentValue is the current calculated value to check for max 
 
         public void max(Func<float, float>[] l, float x)
@@ -38,7 +38,7 @@ namespace Exercise2
         public void sum(Func<int, int> l, int lo, int hi)
         {
             int result = 0;
-            for (int i = lo; i < hi; i++)
+            for (int i = lo; i <= hi; i++)
             {
                 Console.WriteLine("add this to result -->" + l(i));
                 result += l(i);
