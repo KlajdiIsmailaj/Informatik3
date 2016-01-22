@@ -24,7 +24,8 @@ namespace ConsoleApplication2
         /*
          * returns a random float number
          * @param min is the minimum value for the generated random float
-         *        max is the maximum value for the generated random float
+         * @param max is the maximum value for the generated random float
+         * @param rand the generated value
          * @return rand the random float number
          */
         public float randomFloat(int min, int max)
@@ -40,7 +41,8 @@ namespace ConsoleApplication2
         /*
          * returns a random generated string
          * @param min the minimum length for the generated string
-         *        max the maximum length for the generated string
+         * @param max the maximum length for the generated string
+         * @param s the generated String
          * @return s is the random generated string
          */
         public string randomString(int minLength, int maxLength)
