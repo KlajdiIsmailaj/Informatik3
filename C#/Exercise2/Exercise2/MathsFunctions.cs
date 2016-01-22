@@ -6,27 +6,35 @@ using System.Threading.Tasks;
 
 namespace Exercise2
 {
+    //class for the math functions and calculate functions
     class MathsFunctions
     {
-        float B;
+        float currentValue;
 
         //calculates the max value from lamda expression array
+        //@param x a value for the func
+        //@param maxValue the greatest calculated value
+        //@param currentValue is the current calculated value to check for max 
+
         public void max(Func<float, float>[] l, float x)
         {
-            float max = 0;
+            float maxValue = 0;
             for (int i = 0; i < l.Length; i++)
             {
-                B = l[i](x);
+                currentValue = l[i](x);
 
-                if (B > max)
+                if (currentValue > maxValue)
                 {
-                    max = B;
+                    maxValue = currentValue;
                 }
             }
-            Console.WriteLine("the max is --> "+max);
+            Console.WriteLine("the max is --> "+maxValue);
         }
 
         //calculates the sum with 1 lamda expression from lo to hi
+        //@param lo lowest value
+        //@param hi highest value
+        //@param result the calculated sum from lo to hi
         public void sum(Func<int, int> l, int lo, int hi)
         {
             int result = 0;
