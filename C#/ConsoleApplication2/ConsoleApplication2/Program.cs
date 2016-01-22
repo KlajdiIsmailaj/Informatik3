@@ -53,17 +53,17 @@ namespace ConsoleApplication2
             // the lambda expressions
             foreach (float c in roundedFloatList)
             {
-                evenNumberList = roundedFloatList.Filter((float item) => { return item % 2 == 0; });
+                evenNumberList = roundedFloatList.Filter(item => item % 2 == 0);
             }
 
             foreach (float c in randomFloatList)
             {
-                smallerThan5List = randomFloatList.Filter((float item) => { return item <= 5; });
+                smallerThan5List = randomFloatList.Filter(item => item <= 5);
             }
 
             foreach (float c in randomFloatList)
             {
-                negativeNumberList = randomFloatList.Filter((float item) => { return item < 0; });
+                negativeNumberList = randomFloatList.Filter(item => item < 0);
             }
 
 
@@ -121,7 +121,7 @@ namespace ConsoleApplication2
             foreach (String c in randomStringList)
             {
 
-                stringsWithSList = randomStringList.Filter((String item) => { return item.Contains("s"); });
+                stringsWithSList = randomStringList.Filter(item => item.Contains("s"));
             }
 
             Console.WriteLine("--Start filtering all Strings containing an 's'--");
@@ -135,7 +135,7 @@ namespace ConsoleApplication2
             foreach (String c in randomStringList)
             {
 
-                stringsGreater3List = randomStringList.Filter((String item) => { return item.Length >= 3; });
+                stringsGreater3List = randomStringList.Filter(item => item.Length >= 3);
 
 
             }
